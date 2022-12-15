@@ -1350,6 +1350,11 @@ button, input, textarea:focus {
  *************************************/
 .footer-area {
 }
+a.humayra:hover {
+	color: #fff;
+	transition: all 0.3s ease-in-out;
+  }
+
 
 .copyright-area {
 	padding: 40px 0;
