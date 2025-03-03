@@ -1,6 +1,6 @@
 'use client'
 
-import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub, FaPhone } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 import { SiGooglescholar, SiResearchgate } from 'react-icons/si';
 
 export default function Contact() {

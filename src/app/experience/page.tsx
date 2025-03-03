@@ -1,6 +1,6 @@
 'use client'
 
-import { FaBriefcase, FaGraduationCap, FaAward, FaCertificate } from 'react-icons/fa';
+import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 type Experience = {
   title: string;

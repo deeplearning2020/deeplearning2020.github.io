@@ -1,15 +1,14 @@
 'use client'
 
-import { FaGithub, FaExternalLinkAlt, FaServer, FaBrain, FaRobot, FaChartBar } from 'react-icons/fa';
-import { SiPytorch, SiTensorflow, SiOpenai, SiHuggingface, SiFastapi, SiMongodb, SiDocker, SiKubernetes } from 'react-icons/si';
-import { TbBrain } from 'react-icons/tb';
+import { FaGithub, FaExternalLinkAlt, FaServer, FaBrain, FaChartBar } from 'react-icons/fa';
+import { SiPytorch, SiOpenai, SiHuggingface, SiFastapi, SiMongodb, SiDocker, SiKubernetes } from 'react-icons/si';
 
 type Project = {
   title: string;
   description: string;
   longDescription: string;
   technologies: string[];
-  icons: any[];
+  icons: React.ElementType[];
   githubUrl?: string;
   demoUrl?: string;
   imageUrl?: string;

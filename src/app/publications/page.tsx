@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { FaFilePdf, FaExternalLinkAlt, FaQuoteRight, FaCopy, FaTimes } from 'react-icons/fa';
-import { SiGooglescholar } from 'react-icons/si';
 
 // Add Modal state type
 type ModalState = {

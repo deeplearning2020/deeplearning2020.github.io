@@ -1,28 +1,25 @@
 import Image from "next/image";
 import { 
   FaGithub, FaLinkedin, FaTwitter, FaPython, FaDocker, FaAws, 
-  FaReact, FaBrain, FaDatabase, FaCode, FaCloud, FaServer, 
-  FaAtom, FaJenkins, FaBars, FaVial, FaChartBar, FaNetworkWired,
+  FaReact, FaBrain, FaDatabase, FaCode, FaCloud,
+  FaAtom, FaJenkins, FaVial, FaNetworkWired,
   FaJs, FaTerminal, FaShieldAlt, FaRobot
 } from 'react-icons/fa';
 import { 
-  SiPytorch, SiTensorflow, SiScikitlearn, SiOpencv, SiKubernetes, 
+  SiPytorch, SiOpencv, SiKubernetes, 
   SiTerraform, SiMongodb, SiMysql, SiApachehadoop, SiApachespark, 
-  SiApacheairflow, SiDuckdb, SiPolars, SiFlask, SiDjango, SiFastapi, 
-  SiAwslambda, SiApachekafka, SiRedis, SiWeightsandbiases, 
-  SiPostman, SiPrometheus, SiGrafana, SiGraphql, SiRabbitmq, 
+  SiApacheairflow, SiDjango, SiFastapi, 
+  SiApachekafka, SiRedis, SiWeightsandbiases, 
+  SiPostman, SiGraphql, SiRabbitmq, 
   SiPostgresql, SiDatadog, SiOnnx, SiApachejmeter, SiCypress, 
   SiPytest, SiSelenium, SiAppium, SiWebrtc
 } from 'react-icons/si';
-import { TbGraph, TbBrain } from 'react-icons/tb';
-import { BiMemoryCard } from 'react-icons/bi';
+import { TbBrain } from 'react-icons/tb';
 import { GiSwordSpade } from 'react-icons/gi';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { 
   SiBurpsuite, SiWireshark, SiKalilinux, SiMetasploit 
 } from 'react-icons/si';
 import { GiNinjaHeroicStance } from 'react-icons/gi';
-import Link from 'next/link';
 
 // Add this new component after the existing helper components
 const NewsItem = ({ date, title, description }: { date: string; title: string; description: string }) => (
@@ -124,9 +121,8 @@ export default function Home() {
               </h3>
               <div className="grid grid-cols-3 gap-3 md:gap-4">
                 <TechItem icon={SiPytorch} name="PyTorch" />
-                <TechItem icon={SiTensorflow} name="TensorFlow" />
-                <TechItem icon={FaAtom} name="JAX" />
                 <TechItem icon={SiOpencv} name="OpenCV" />
+                <TechItem icon={FaAtom} name="JAX" />
                 <TechItem icon={SiOnnx} name="ONNX" />
                 <TechItem icon={TbBrain} name="LlamaIndex" />
                 <TechItem icon={SiWeightsandbiases} name="W&B" />
@@ -244,9 +240,9 @@ export default function Home() {
               </p>
             </div>
             <div className="flex space-x-4 md:space-x-6">
-              <SocialLink href="https://github.com" icon={FaGithub} label="GitHub" />
-              <SocialLink href="https://linkedin.com" icon={FaLinkedin} label="LinkedIn" />
-              <SocialLink href="https://twitter.com" icon={FaTwitter} label="Twitter" />
+              <SocialLink href="https://github.com" icon={FaGithub} />
+              <SocialLink href="https://linkedin.com" icon={FaLinkedin} />
+              <SocialLink href="https://twitter.com" icon={FaTwitter} />
             </div>
           </div>
           <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-700">
@@ -261,14 +257,14 @@ export default function Home() {
 }
 
 // Helper Components
-const TechItem = ({ icon: Icon, name }: { icon: any; name: string }) => (
+const TechItem = ({ icon: Icon, name }: { icon: React.ElementType; name: string }) => (
   <div className="flex flex-col items-center text-center group">
     <Icon className="text-3xl mb-1.5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
     <span className="font-medium text-sm">{name}</span>
   </div>
 );
 
-const SocialLink = ({ href, icon: Icon, label }: { href: string; icon: any; label: string }) => (
+const SocialLink = ({ href, icon: Icon }: { href: string; icon: React.ElementType }) => (
   <a
     href={href}
     target="_blank"
@@ -277,14 +273,4 @@ const SocialLink = ({ href, icon: Icon, label }: { href: string; icon: any; labe
   >
     <Icon className="text-2xl" />
   </a>
-);
-
-// Add this helper component for navigation links
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Link
-    href={href}
-    className="px-4 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
-  >
-    {children}
-  </Link>
 );
