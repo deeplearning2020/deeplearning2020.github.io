@@ -15,10 +15,8 @@ type Publication = {
   authors: string[];
   journal: string;
   year: number;
-  abstract: string;
   pdfUrl?: string;
   publicationUrl?: string;
-  tags?: string[];
   bibtex?: string;
 };
 
@@ -38,9 +36,8 @@ const publications: Publication[] = [
     ],
     journal: "IEEE Access",
     year: 2020,
-    abstract: "A novel approach using deep learning and visual analytics for eye movement tracking in human-machine interaction systems based on inertial measurement units.",
+    pdfUrl: "https://ieeexplore.ieee.org/document/9042233",
     publicationUrl: "https://ieeexplore.ieee.org/document/9042233",
-    tags: ["Deep Learning", "Human-Machine Interaction", "Eye Tracking", "Visual Analytics", "Inertial Measurement"],
     bibtex: `@article{fahim2020visual,
   title={A visual analytic in deep learning approach to eye movement for human-machine interaction based on inertia measurement},
   author={Fahim, Shahriar Rahman and Datta, Dristi and Sheikh, MD Rafiqul Islam and Dey, Sanjay and Sarker, Yeahia and Sarker, Subrata K and Badal, Faisal R and Das, Sajal K},
@@ -62,9 +59,8 @@ const publications: Publication[] = [
     ],
     journal: "Electric Power Systems Research",
     year: 2020,
-    abstract: "A novel approach combining self-attention mechanisms with CNNs for power system fault detection and classification using time series imaging techniques.",
+    pdfUrl: "https://doi.org/10.1016/j.epsr.2020.106437",
     publicationUrl: "https://doi.org/10.1016/j.epsr.2020.106437",
-    tags: ["Deep Learning", "Power Systems", "Fault Detection", "Self-Attention", "CNN"],
     bibtex: `@article{fahim2020self,
   title={Self attention convolutional neural network with time series imaging based feature extraction for transmission line fault detection and classification},
   author={Fahim, Shahriar Rahman and Sarker, Yeahia and Sarker, Subrata K and Sheikh, Md Rafiqul Islam and Das, Sajal K},
@@ -91,9 +87,8 @@ const publications: Publication[] = [
     ],
     journal: "IEEE Access",
     year: 2021,
-    abstract: "A comprehensive review of Graph Neural Networks focusing on their applications and methodologies in non-Euclidean space.",
+    pdfUrl: "https://ieeexplore.ieee.org/document/9393454",
     publicationUrl: "https://ieeexplore.ieee.org/document/9393454",
-    tags: ["Graph Neural Networks", "Deep Learning", "Non-Euclidean Geometry", "Survey"],
     bibtex: `@article{asif2021graph,
   title={Graph Neural Network: A Comprehensive Review on Non-Euclidean Space},
   author={Asif, Nurul A and Sarker, Yeahia and Chakrabortty, Ripon K and Ryan, Michael J and Ahamed, Md Hafiz and Saha, Dip K and Badal, Faisal R and Das, Sajal K and Ali, Md Firoz and Moyeen, Sumaya I and others},
@@ -109,10 +104,8 @@ const publications: Publication[] = [
     authors: ["Yeahia Sarker", "Mohammad Arif Hossain"],
     journal: "International Conference on Image Processing",
     year: 2024,
-    abstract: "This paper presents a novel approach to computer vision using advanced deep learning techniques, demonstrating significant improvements in accuracy and computational efficiency compared to existing methods.",
     pdfUrl: "#",
     publicationUrl: "#",
-    tags: ["Deep Generative Models", "Energy-based Models", "Attention Mechanism", "Morphogical Operations"],
     bibtex: `@inproceedings{sarker2024energy,
       title={Energy-Based Generative Models with Morphological Attention Networks for Hyperspectral Image Classification: A Unified Framework},
       author={Sarker, Yeahia and Hossain, Mohammad Arif},
@@ -132,9 +125,8 @@ const publications: Publication[] = [
     ],
     journal: "2019 IEEE International Conference on Power, Electrical, and Electronics and Industrial Applications (PEEIACON)",
     year: 2019,
-    abstract: "A novel intelligent approach for power transmission line fault classification and localization using advanced machine learning techniques.",
+    pdfUrl: "https://ieeexplore.ieee.org/document/8915460",
     publicationUrl: "https://ieeexplore.ieee.org/document/8915460",
-    tags: ["Power Systems", "Fault Classification", "Machine Learning", "Power Transmission"],
     bibtex: `@inproceedings{fahim2019intelligent,
   title={An intelligent approach of fault classification and localization of a power transmission line},
   author={Fahim, Shahriar Rahman and Sarker, Yeahia and Islam, Omar Kamrul and Sarker, Subrata K and Ishraque, Md Fatin and Das, Sajal K},
@@ -156,9 +148,8 @@ const publications: Publication[] = [
     ],
     journal: "2019 5th International Conference on Advances in Electrical Engineering (ICAEE)",
     year: 2019,
-    abstract: "A novel human-computer interaction system that combines inertial measurement units with convolutional neural networks for improved interaction capabilities.",
+    pdfUrl: "https://ieeexplore.ieee.org/document/7393933",
     publicationUrl: "https://ieeexplore.ieee.org/document/7393933",
-    tags: ["Human-Computer Interaction", "CNN", "Deep Learning", "Inertial Measurement", "Neural Networks"],
     bibtex: `@inproceedings{fahim2019human,
   title={A human-computer interaction system utilizing inertial measurement unit and convolutional neural network},
   author={Fahim, Shahriar Rahman and Sarker, Yeahia and Rashiduzzaman, Md and Islam, Omar Kamrul and Sarker, Subrato K and Das, Sajal K},
@@ -196,46 +187,29 @@ export default function Publications() {
             Research publications in machine learning, computer vision, and artificial intelligence
           </p>
           
-          <div className="space-y-8">
+          <div className="space-y-6">
             {publications.map((pub, index) => (
               <div 
                 key={index}
-                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-500/50 dark:hover:border-blue-500/50"
+                className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-500/50 dark:hover:border-blue-500/50"
               >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                <div className="flex flex-col md:flex-row md:items-start gap-4">
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
                       {pub.title}
                     </h3>
                     
-                    <p className="text-gray-600 dark:text-gray-300 mb-2 text-sm">
+                    <p className="text-gray-600 dark:text-gray-300 mb-1 text-sm">
                       {pub.authors.join(", ")}
                     </p>
                     
-                    <p className="text-blue-600 dark:text-blue-400 mb-4 text-sm font-medium">
+                    <p className="text-blue-600 dark:text-blue-400 text-sm font-medium">
                       {pub.journal} • {pub.year}
                     </p>
-                    
-                    <p className="text-gray-700 dark:text-gray-200 mb-4 text-sm leading-relaxed">
-                      {pub.abstract}
-                    </p>
-                    
-                    {pub.tags && (
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {pub.tags.map((tag, tagIndex) => (
-                          <span 
-                            key={tagIndex}
-                            className="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4 mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                <div className="flex flex-wrap gap-4 mt-3 pt-3 border-t border-gray-100 dark:border-gray-700">
                   {pub.pdfUrl && (
                     <a 
                       href={pub.pdfUrl}
